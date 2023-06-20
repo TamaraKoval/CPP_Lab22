@@ -8,12 +8,11 @@ const unsigned N = 80;
 class TomaString {
     static const char MARK = '@';
     char tomaString[N + 1]{};
-    int curMarkPos;
     char &operator[](unsigned index);
 public:
-    TomaString() { tomaString[0] = MARK; curMarkPos = 0; }
+    TomaString() { tomaString[0] = MARK; }
     static int getMaxLength() { return N; }
-    int length();
+    int length() const;
     void append(char ch);
     TomaString & operator=(const char *str);
     TomaString & operator=(TomaString str);
